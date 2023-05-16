@@ -38,7 +38,7 @@
                 session_start();
                 $_SESSION['loggedin'] = true;
                 $_SESSION['username'] = $username; // Assign the username to the session variable
-                header("Location: /Project_Sakura/home/index.php");
+                header("Location: ../home/index.php");
                 exit;
             }     
             else {

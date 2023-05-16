@@ -85,3 +85,19 @@ button{
     font-size: 1em;
     font-weight: 600;
 }
+
+/* Make the background of the username input field transparent */
+input[type="username"]:-webkit-autofill,
+input[type="username"]:-webkit-autofill:hover,
+input[type="username"]:-webkit-autofill:focus {
+    -webkit-text-fill-color: inherit !important;
+    background-color: transparent !important;
+    transition: background-color 5000s ease-in-out 0s !important;
+}
+
+/* Style the pseudo-element to make it transparent */
+input[type="username"]:-webkit-autofill::first-line {
+    background-color: transparent;
+    color: #fff;
+}
+
