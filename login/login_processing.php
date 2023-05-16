@@ -1,8 +1,16 @@
 <?php
+    
     $host = "localhost";
     $user = "root";
     $pass = null;
     $database = "onlinestore";
+    
+    /*
+    $host = "sql111.epizy.com";
+    $user = "epiz_34218781";
+    $pass = "GHhcVzU4DXL";
+    $database = "epiz_34218781_customers_info";
+    */
 
     $connect = mysqli_connect($host, $user, $pass, $database);
 
