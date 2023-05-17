@@ -33,7 +33,7 @@
                         <h2>Login</h2>
                         <div class="inputbox">
                             <ion-icon name="person-outline"></ion-icon>
-                            <input type="username" id="username" name="username" required>
+                            <input type="username" id="username" name="username" value="<?php echo isset($_GET['username']) ? htmlspecialchars($_GET['username']) : ''; ?>" required>
                             <label for="username">Username</label>
                         </div>
                         <div class="inputbox">
@@ -54,17 +54,17 @@
                             }
                             ?>
                         </div>
-                        <div class="showforgot_pass">
-                            <div class="show">
-                                <label for="show" id="show" name="show"><input type="checkbox">Show Password</label>
+                        <div class="rememberforgot_pass">
+                            <div class="remember">
+                                <label for="remember" id="remember" name="remember"><input type="checkbox">Remember Me</label>
                             </div>
                             <div class="forgot">
-                                <label for="forgot" id="forgot" name="forgot"><a href="#">Forget Password</a></label>
+                                <label for="forgot" id="forgot" name="forgot"><a href="#">Forgot Password?</a></label>
                             </div>
                         </div>
                         <button type="submit" name="submit" id="submit">Login</button>
                         <div class="register">
-                            <p>Don't have an account? <a href="#">Sign Up</a></p>
+                            <p>Don't have an account? <a href="#" style="color: yellow;">Sign Up</a></p>
                         </div>
                     </form>
                 </div>

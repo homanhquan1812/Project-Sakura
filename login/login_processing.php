@@ -38,17 +38,17 @@
                 $_SESSION['loggedin'] = true;
                 $_SESSION['username'] = $username; // Assign the username to the session variable
 
-                
+
                 header("Location: ../home/index.php");
                 exit;
             }     
             else {
-                header("Location: ../login/index.php?error=1");
+                header("Location: ../login/index.php?error=1&username=" . urlencode($username));
                 exit;
             }
         }
         else {
-            header("Location: ../login/index.php?error=1");
+            header("Location: ../login/index.php?error=1&username=" . urlencode($username));
             exit;
         }
     }
