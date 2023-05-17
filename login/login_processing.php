@@ -18,7 +18,6 @@
         die("Connection failed: " . $connect->connect_error);
     }
 
-
     if (isset($_POST['submit']))
     {
         // Sanitize user input to prevent SQL injection
@@ -38,13 +37,19 @@
                 session_start();
                 $_SESSION['loggedin'] = true;
                 $_SESSION['username'] = $username; // Assign the username to the session variable
+
+                
                 header("Location: ../home/index.php");
                 exit;
             }     
             else {
-                // Display error message
-                echo "Invalid username or password.";
+                header("Location: ../login/index.php?error=1");
+                exit;
             }
+        }
+        else {
+            header("Location: ../login/index.php?error=1");
+            exit;
         }
     }
 

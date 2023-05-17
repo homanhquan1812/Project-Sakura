@@ -1,3 +1,8 @@
+<?php
+    include 'login_processing.php';
+    $error = isset($_GET['error']) ? $_GET['error'] : "";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -32,11 +37,35 @@
                             <label for="username">Username</label>
                         </div>
                         <div class="inputbox">
-                            <ion-icon name="lock-closed-outline"></ion-icon>
+                            <span class="icon-container">
+                                <ion-icon name="lock-closed-outline" class="lock-icon"></ion-icon>
+                                <ion-icon name="eye-outline" class="eye-icon" id="eye-icon"></ion-icon>
+                            </span>
                             <input type="password" id="password" name="password" required>
                             <label for="password">Password</label>
                         </div>
+                        <div class="error">
+                            <?php
+                            if ($error == "1")
+                            {
+                                ?>
+                                    <p>Incorrect username or password</p>
+                                <?php
+                            }
+                            ?>
+                        </div>
+                        <div class="showforgot_pass">
+                            <div class="show">
+                                <label for="show" id="show" name="show"><input type="checkbox">Show Password</label>
+                            </div>
+                            <div class="forgot">
+                                <label for="forgot" id="forgot" name="forgot"><a href="#">Forget Password</a></label>
+                            </div>
+                        </div>
                         <button type="submit" name="submit" id="submit">Login</button>
+                        <div class="register">
+                            <p>Don't have an account? <a href="#">Sign Up</a></p>
+                        </div>
                     </form>
                 </div>
             </div>
